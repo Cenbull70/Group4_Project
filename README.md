@@ -40,7 +40,7 @@ This project aims to build robust machine learning models for analyzing and fore
 
 Python 3.8+
 
-Libraries: TensorFlow, PySpark, scikit-learn, pandas, matplotlib, seaborn, plotly
+Libraries: TensorFlow, PySpark, scikit-learn, pandas, matplotlib, plotly
 
 ## Dataset Source
 

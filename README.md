@@ -56,7 +56,7 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 - Cleaning: Handling missing or erroneous values.
 
-- Normalization: Applying Min-Max scaling to normalize features.
+- Normalization: Used a custome scaling to normalize data.
 
 - Feature Engineering: Creating lagged variables, moving averages, and other derived features to capture temporal dependencies.
 
@@ -72,9 +72,8 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 ## Key Observations:
 
-- Clear trends and seasonal patterns in both indices.
-
-- Strong correlations between lagged values and the target variables.
+- Clear trends in both indices.
+- Data for all features is continious and there is no break or major fluxuations in values.
 
 ## Modeling for IXIC and NYA
 
@@ -98,17 +97,11 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 - Improves generalization by averaging multiple tree predictions.
 
-#### Gradient Boosting Regressor:
-
-- Focuses on minimizing errors by iteratively improving weak learners.
-
-- Tuned using learning rate, number of estimators, and max depth.
-
 #### Neural Networks (Deep Learning):
 
 - Captures highly non-linear relationships.
 
-- Architecture: Multi-layer perceptron (MLP) with LeakyReLU activation.
+- Architecture: Multi-layer perceptron (MLP) with ReLU, Tanh and Signod activation.
 
 - Optimized using Adam optimizer and learning rate schedules.
 
@@ -117,12 +110,11 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 - Hyperparameter Tuning: Grid search and randomized search are employed to find the best model parameters.
 
 - Cross-Validation: Ensures robust evaluation by splitting data into training and validation sets multiple times.
-
 - Early Stopping: Applied to neural networks to prevent overfitting.
 
 #### Ensemble Methods
 
-- Voting Regressor: Combines predictions from multiple models using weighted averaging.
+- Average Regressor: Combines predictions from multiple models using averaging.
 
 - Stacking: Trains a meta-model using predictions from individual base models.
 
@@ -134,9 +126,8 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 | Linear Regression      | 0.65 | 0.80 | 0.89      |
 | Decision Tree Regressor| 0.58 | 0.75 | 0.91      |
 | Random Forest Regressor| 0.50 | 0.68 | 0.93      |
-| Gradient Boosting      | 0.48 | 0.66 | 0.94      |
 | Neural Network         | 0.45 | 0.62 | 0.95      |
-| Ensemble (Voting)      | 0.43 | 0.60 | 0.96      |
+| Ensemble               | 0.43 | 0.60 | 0.96      |
 
 ### NYA Results
 | Model                  | MAE  | RMSE | R-Squared |
@@ -144,9 +135,8 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 | Linear Regression      | 0.70 | 0.85 | 0.87      |
 | Decision Tree Regressor| 0.62 | 0.78 | 0.90      |
 | Random Forest Regressor| 0.55 | 0.72 | 0.92      |
-| Gradient Boosting      | 0.53 | 0.70 | 0.93      |
 | Neural Network         | 0.50 | 0.68 | 0.94      |
-| Ensemble (Voting)      | 0.48 | 0.65 | 0.95      |
+| Ensemble               | 0.48 | 0.65 | 0.95      |
 
 
 ## Conclusion

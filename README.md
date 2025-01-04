@@ -72,8 +72,9 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 ## Key Observations:
 
-- Clear trends in both indices.
-- Data for all features is continious and there is no break or major fluxuations in values.
+- Data for all features is continuous and there is no break or major fluctuations in values.
+
+- Clear trends and movements in both indices.
 
 ## Modeling for IXIC and NYA
 
@@ -93,9 +94,15 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 #### Random Forest Regressor:
 
-- Ensemble of decision trees.
+- Aggregation of multiple decision trees.
 
-- Improves generalization by averaging multiple tree predictions.
+- Aggregation of multiple trees reduces overfitting compared to a single decision tree.
+
+#### Ensemble Method:  
+
+- Stacking: Trains a meta-model (SVC) using predictions from logistic regression, decision tree, and random forest models.
+
+- The meta-model learns from the diverse strengths and weaknesses of these models and forms a more balanced and accurate final model.
 
 #### Neural Networks (Deep Learning):
 
@@ -110,37 +117,40 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 - Hyperparameter Tuning: Grid search and randomized search are employed to find the best model parameters.
 
 - Cross-Validation: Ensures robust evaluation by splitting data into training and validation sets multiple times.
-- Early Stopping: Applied to neural networks to prevent overfitting.
 
 #### Ensemble Methods
 
 - Average Regressor: Combines predictions from multiple models using averaging.
 
-- Stacking: Trains a meta-model using predictions from individual base models.
+- Stacking: Trains a meta-model(SVC) using predictions from individual base models.
 
 ## Results Summary
 
 ### IXIC Results
-| Model                  | MAE  | RMSE | R-Squared |
-|------------------------|------|------|-----------|
-| Linear Regression      | 0.65 | 0.80 | 0.89      |
-| Decision Tree Regressor| 0.58 | 0.75 | 0.91      |
-| Random Forest Regressor| 0.50 | 0.68 | 0.93      |
-| Neural Network         | 0.45 | 0.62 | 0.95      |
-| Ensemble               | 0.43 | 0.60 | 0.96      |
+| Model                                 | MAE  | RMSE | R-Squared |
+|---------------------------------------|------|------|-----------|
+| Linear Regression                     | 0.65 | 0.80 | 0.89      |
+| Decision Tree Regressor               | 0.58 | 0.75 | 0.91      |
+| Random Forest Regressor               | 0.50 | 0.68 | 0.93      |
+| Ensemble (Meta-model SVC)             |      |      |           |
+| Neural Network                        | 0.45 | 0.62 | 0.95      |
+| NN Ensemble (Averaging)               |      |      |           |
+| NN Ensemble (Meta-model SVC)          | 0.43 | 0.60 | 0.96      |
 
 ### NYA Results
-| Model                  | MAE  | RMSE | R-Squared |
-|------------------------|------|------|-----------|
-| Linear Regression      | 0.70 | 0.85 | 0.87      |
-| Decision Tree Regressor| 0.62 | 0.78 | 0.90      |
-| Random Forest Regressor| 0.55 | 0.72 | 0.92      |
-| Neural Network         | 0.50 | 0.68 | 0.94      |
-| Ensemble               | 0.48 | 0.65 | 0.95      |
+| Model                                | MAE  | RMSE | R-Squared |
+|--------------------------------------|------|------|-----------|
+| Linear Regression                    | 0.70 | 0.85 | 0.87      |
+| Decision Tree Regressor              | 0.62 | 0.78 | 0.90      |
+| Random Forest Regressor              | 0.55 | 0.72 | 0.92      |
+| Ensemble (Meta-model SVC)            |      |      |           |
+| Neural Network                       | 0.50 | 0.68 | 0.94      |
+| NN Ensemble (Averaging)              |      |      |           |
+| NN Ensemble (Meta-model SVC)         | 0.48 | 0.65 | 0.95      |
 
 
 ## Conclusion
 
 This project demonstrates the effectiveness of combining individual machine learning models and ensemble methods for financial index prediction. The ensemble models consistently outperform individual models, achieving high accuracy and robustness.
 
-For further enhancements, consider exploring advanced techniques like LSTM networks for temporal modeling or incorporating external data sources such as economic indicators.
+For further enhancements, advanced techniques like LSTM networks can be explored for temporal modeling or external data sources such as economic indicators can be incorporated.

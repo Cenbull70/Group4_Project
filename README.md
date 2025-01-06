@@ -127,26 +127,28 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 ## Results Summary
 
 ### IXIC Results
-| Model                                 | MAE  | RMSE | R-Squared |
-|---------------------------------------|------|------|-----------|
-| Linear Regression                     | 0.65 | 0.80 | 0.89      |
-| Decision Tree Regressor               | 0.58 | 0.75 | 0.91      |
-| Random Forest Regressor               | 0.50 | 0.68 | 0.93      |
-| Ensemble (Meta-model SVC)             |      |      |           |
-| Neural Network                        | 0.45 | 0.62 | 0.95      |
-| NN Ensemble (Averaging)               |      |      |           |
-| NN Ensemble (Meta-model SVC)          | 0.43 | 0.60 | 0.96      |
+| Model                                 | Accuracy|
+|---------------------------------------|------|
+| Linear Regression                     | 0.70 |
+| Decision Tree Regressor               | 0.68 |
+| Random Forest Regressor               | 0.77 | 
+| Ensemble (Meta-model SVC)             | 0.60 |
+| Neural Network                        | 0.75 |
+| Neural Network Optimizer              | 0.65 |
+| Neural Network (Average)              | 0.75 |
+| NN Ensemble (Meta-model SVC)          | 0.74 |
 
 ### NYA Results
-| Model                                | MAE  | RMSE | R-Squared |
-|--------------------------------------|------|------|-----------|
-| Linear Regression                    | 0.70 | 0.85 | 0.87      |
-| Decision Tree Regressor              | 0.62 | 0.78 | 0.90      |
-| Random Forest Regressor              | 0.55 | 0.72 | 0.92      |
-| Ensemble (Meta-model SVC)            |      |      |           |
-| Neural Network                       | 0.50 | 0.68 | 0.94      |
-| NN Ensemble (Averaging)              |      |      |           |
-| NN Ensemble (Meta-model SVC)         | 0.48 | 0.65 | 0.95      |
+| Model                                | Accuracy  |
+|--------------------------------------|------|
+| Linear Regression                    | 0.72 |
+| Decision Tree Regressor              | 0.82 |
+| Random Forest Regressor              | 0.89 |
+| Ensemble (Meta-model SVC)            | 0.79 |
+| Neural Network                       | 0.76 |
+| Neural Network Optimizer             | 0.68 |
+| Neural Network (Average)             | 0.76 |
+| NN Ensemble (Meta-model SVC)         | 0.76 |
 
 
 ## Conclusion

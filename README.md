@@ -80,7 +80,7 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 ### Algorithms Used
 
-#### Linear Classifiers:
+#### Linear Regressor:
 
 - Simple baseline model to predict index trends.
 
@@ -92,7 +92,7 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 
 - Configured with optimal depth to prevent overfitting.
 
-#### Random Forest Regressor:
+#### Random Forest Classifiers:
 
 - Aggregation of multiple decision trees.
 
@@ -129,9 +129,9 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 ### IXIC Results
 | Model                                 | Accuracy|
 |---------------------------------------|------|
-| Linear Classifiers                    | 0.70 |
-| Decision Tree Classifiers              | 0.68 |
-| Random Forest Regressor               | 0.77 | 
+| Linear Regressor                      | 0.70 |
+| Decision Tree Classifiers             | 0.68 |
+| Random Forest Classifiers             | 0.77 | 
 | Ensemble (Meta-model SVC)             | 0.60 |
 | Neural Network                        | 0.75 |
 | Neural Network Optimizer              | 0.65 |

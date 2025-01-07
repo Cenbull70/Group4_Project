@@ -142,8 +142,8 @@ Data for both IXIC and NYA indices is ingested from external sources (e.g., CSV 
 | Model                                | Accuracy  |
 |--------------------------------------|------|
 | Linear Regression                    | 0.72 |
-| Decision Tree Regressor              | 0.82 |
-| Random Forest Regressor              | 0.89 |
+| Decision Tree Classifiers            | 0.82 |
+| Random Forest Classifiers            | 0.89 |
 | Ensemble (Meta-model SVC)            | 0.79 |
 | Neural Network                       | 0.76 |
 | Neural Network Optimizer             | 0.68 |
